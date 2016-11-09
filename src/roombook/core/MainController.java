@@ -41,8 +41,9 @@ public class MainController extends HttpServlet
 		// Load Application Context Root for multiple versions of the application
 		if (sc.getAttribute("Context_Root") == null)
 		{
-			System.out.println("Setting CONTEXT ROOT to: " + sc.getInitParameter("AppName"));
-			sc.setAttribute("Context_Root", sc.getInitParameter("AppName"));
+			String contextRoot = sc.getInitParameter("AppName");
+			System.out.println("Setting CONTEXT ROOT to: " + contextRoot) ;
+			sc.setAttribute("Context_Root", contextRoot);
 		}
 		
 		// Load Room Types for drop-down and Select all roomTypes for filter bar
